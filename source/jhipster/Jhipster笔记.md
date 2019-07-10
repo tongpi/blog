@@ -1,6 +1,8 @@
-## `Jhipster`前后端分离
+# Jhipster笔记
 
-`jhipster --skip-client` 会只创建后段应用 (这就类似一个典型的微服务应用)`
+## Jhipster`前后端分离
+
+`jhipster --skip-client` 会只创建后端应用 (这就类似一个典型的微服务应用)`
 
 `jhipster --skip-server` 将会创建前端应用
 
