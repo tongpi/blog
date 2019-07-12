@@ -1415,3 +1415,18 @@ yo jhipster-coverb
 npm install -g generator-jhipster-administration-database
 yo hipster-administration-database
 ```
+
+## 针对已经存在的数据库生成应用
+
+```
+npm install -g generator-jhipster-db-helper
+```
+
+Siddhi支持
+
+```
+npm install -g generator-jhipster-siddhi
+yo jhipster-siddhi
+
+npm run doc
+```
