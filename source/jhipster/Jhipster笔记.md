@@ -1202,3 +1202,6 @@ public void configure(HttpSecurity http) throws Exception {
 版权声明：本文为博主原创文章，转载请附上博文链接！
 ```
 
+
+
+# [JHipster Domain Language (JDL)](https://blog.csdn.net/qq_31424825/article/details/80991423)
