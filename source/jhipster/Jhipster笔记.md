@@ -1384,3 +1384,17 @@ jhipster:
 
 
 # [thymeleaf模板介绍 - LoveEmperor_王子様](https://blog.csdn.net/qq_31424825/article/details/83628202)
+
+
+
+
+
+# Jhipster扩展模块
+
+## 自动翻译实体的资源文件：
+
+```
+npm install -g generator-jhipster-translation
+# 需要google translate API key 
+jhipster-translation
+```
