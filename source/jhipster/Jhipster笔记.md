@@ -1393,8 +1393,18 @@ jhipster:
 
 ## 自动翻译实体的资源文件：
 
-```
+```shell
 npm install -g generator-jhipster-translation
 # 需要google translate API key 
 jhipster-translation
+
+
+```
+
+## 
+
+```
+npm install -g jhipster-coverb
+
+yo jhipster-coverb
 ```
