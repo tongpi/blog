@@ -1401,10 +1401,10 @@ jhipster-translation
 
 ```
 
-## 
+## 生成应用封面
 
 ```
-npm install -g jhipster-coverb
+npm install -g generator-jhipster-coverb
 
 yo jhipster-coverb
 ```
