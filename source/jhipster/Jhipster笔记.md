@@ -1242,3 +1242,25 @@ private String name;
 
 
 # [jHipster详解 - LoveEmperor_王子様](https://blog.csdn.net/qq_31424825/article/details/80931229)
+
+
+
+# 邮件配置：
+
+找到application-dev.yml的配置文件在src/resources/config中。
+
+修改spring下的mail中的代码
+
+```yaml
+  mail:
+        host: smtp.qq.com
+        port: 587
+        username: xxxxxxxx@qq.com
+        password: xxxxxxxxxxxx
+        tls: true
+        properties.mail.smtp:
+        auth: true
+        starttls.enable: true
+		ssl.trust: smtp.qq.com
+```
+
