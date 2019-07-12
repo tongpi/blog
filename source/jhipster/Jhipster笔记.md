@@ -1220,7 +1220,21 @@ elasticsearch-plugin install analysis-smartcn
 
 - 在要存入ES的Domain实体对象中对需要建立分词的列配置 @Field 如下：
 
-```
+```java
 @Field(type = FieldType.Text, searchAnalyzer = "smartcn", analyzer = "smartcn")
+```
+
+- 查询如下：使用QueryBuilder查询
+
+```java
+    @Transactional(readOnly = true)
+    public Page<PointsDTO> search(String query, Pageable pageable) {
+        log.debug("Request to search for a page of Points for query {}", query);
+        //return pointsSearchRepository.search(queryStringQuery(query), pageable)
+        //    .map(pointsMapper::toDto);
+        
+        return pointsSearchRepository.search(new MatchQueryBuilder(fieldName:"name",query), pageable)
+            .map(pointsMapper::toDto);        
+    }
 ```
 
