@@ -1239,3 +1239,6 @@ private String name;
     }
 ```
 
+
+
+# [jHipster详解 - LoveEmperor_王子様](https://blog.csdn.net/qq_31424825/article/details/80931229)
