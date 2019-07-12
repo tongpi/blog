@@ -1222,6 +1222,7 @@ elasticsearch-plugin install analysis-smartcn
 
 ```java
 @Field(type = FieldType.Text, searchAnalyzer = "smartcn", analyzer = "smartcn")
+private String name;
 ```
 
 - 查询如下：使用QueryBuilder查询
