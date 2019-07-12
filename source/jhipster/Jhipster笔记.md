@@ -1168,3 +1168,37 @@ entity A {
   count Integer min(DEFAULT_MIN) max(DEFAULT_MAX)
 }
 ```
+
+
+
+# Jhipster权限控制
+
+```java
+public void configure(HttpSecurity http) throws Exception {
+    http
+        .csrf()
+        .ignoringAntMatchers("/h2-console/**")
+        .csrfTokenRepository(CookieCsrfTokenRepository.withHttpOnlyFalse())
+    .and()
+        .addFilterBefore(corsFilter, CsrfFilter.class)
+        .headers()
+        .frameOptions()
+        .disable()
+    .and()
+        .sessionManagement()
+        .sessionCreationPolicy(SessionCreationPolicy.STATELESS)
+    .and()
+        .authorizeRequests()
+        .antMatchers("/api/profile-info").permitAll()
+        .antMatchers("/api/**").authenticated()
+        .antMatchers("/management/health").permitAll()
+        .antMatchers("/management/**").hasAuthority(AuthoritiesConstants.ADMIN)
+        .antMatchers("/swagger-resources/configuration/ui").permitAll();
+}
+--------------------- 
+作者：bobying 
+来源：CSDN 
+原文：https://blog.csdn.net/ymb76/article/details/78870919 
+版权声明：本文为博主原创文章，转载请附上博文链接！
+```
+
