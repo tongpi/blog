@@ -1262,5 +1262,124 @@ private String name;
         auth: true
         starttls.enable: true
 		ssl.trust: smtp.qq.com
+		
 ```
+
+# JHipster属性解释
+
+```yaml
+jhipster:
+
+    # 用于JHipster异步函数调用的线程池
+    async:
+        core-pool-size: 2 # 初始化池大小
+        max-pool-size: 50 # 最大池大小
+        queue-capacity: 10000 # 池队列容量
+
+    # HTTP配置
+    http:
+        # V_1_1 for HTTP/1.1 or V_2_0 for HTTP/2.
+        # 使用HTTP/2需要SSL 支持(见 Spring Boot "server.ssl" 配置)
+        version: V_1_1
+        cache: # 用于 io.github.jhipster.web.filter.CachingHttpHeadersFilter
+            timeToLiveInDays: 1461 # 静态内容默认缓存4年
+
+    # Hibernate二级缓存，用于CacheConfiguration
+    cache:
+        hazelcast: # Hazelcast configuration
+            time-to-live-seconds: 3600 # 默认对象在缓存中保持1小时
+            backup-count: 1 # 对象备份数量
+        ehcache: # Ehcache配置
+            time-to-live-seconds: 3600 # 默认对象在缓存中保持1小时
+            max-entries: 100 # 每次缓存开启时对象的最大数量
+
+    # E-mail属性
+    mail:
+        from: jhipster@localhost # 默认的e-mails发出地址
+        base-url: http://127.0.0.1:8080 # 在邮件中使用的应用的URL
+
+    # Spring安全相关配置
+    security:
+        remember-me: # JHipster对"记住我"机制的安全实现：基于会话的身份验证
+            # 安全key（对于你的应用是独有的且应保密）
+            key: 0b32a651e6a65d5731e869dc136fb301b0a8c0e4
+        client-authorization: # 用于JHipster UAA验证
+            access-token-uri: # JHipster UAA服务器OAuth令牌的URL
+            token-service-id: # 当前应用的ID
+            client-id: # OAuth客户ID
+            client-secret: # OAuth客户秘密
+        authentication:
+            jwt: # JHipster指定JWT实现
+                secret: # JWT密钥
+                token-validity-in-seconds: 86400 # 令牌在24小时内有效
+                token-validity-in-seconds-for-remember-me: 2592000 # "记住我"令牌在30天内有效
+            oauth: # 用于JHipster OAuth 2对于MongoDB的特定实现
+                client-id: # OAuth客户ID
+                client-secret: # OAuth客户秘密
+                token-validity-in-seconds: 1800 # 令牌在30分钟内有效
+
+    # Swagger配置
+    swagger:
+        default-include-pattern: /api/.*
+        title: JHipster API
+        description: JHipster API documentation
+        version: 0.0.1
+        terms-of-service-url:
+        contact-name:
+        contact-url:
+        contact-email:
+        license:
+        license-url:
+
+    # DropWizard Metrics配置，用于MetricsConfiguration
+    metrics:
+        jmx: # 作为JMX beans导出指标
+            enabled: true # JMX默认开启
+        # 将指标发送给Graphite服务器
+        # 使用"graphite" Maven配置文件以产生Graphite依赖
+        graphite:
+            enabled: false # Graphite默认关闭
+            host: localhost
+            port: 2003
+            prefix: jhipster
+        # 将指标发送给Prometheus服务器
+        # 使用"prometheus" Maven配置文件以产生Prometheus依赖
+        prometheus:
+            enabled: false # Prometheus默认关闭
+            endpoint: /prometheusMetrics
+        logs: # 在日志中报告Dropwizard指标
+            enabled: false
+            reportFrequency: 60 # 每秒报告的频度
+
+    # Logging配置，用于LoggingConfiguration
+    logging:
+        logstash: # 通过socket将日志提交给Logstash
+            enabled: false # Logstash默认关闭
+            host: localhost # Logstash服务器URL
+            port: 5000 # Logstash服务器端口
+            queue-size: 512 # 缓存日志的队列
+        spectator-metrics: # 在日志中报告Netflix Spectator指标
+            enabled: false # Spectator默认关闭
+
+    # Spring Social对Twitter/Facebook/Google验证的特定配置
+    social:
+        redirect-after-sign-in: "/#/home" # 验证成功后的重定向URL
+
+    # cross-origin resource sharing (CORS)默认关闭，去掉注释以开启
+    # 配置标准的org.springframework.web.cors.CorsConfiguration
+    cors:
+        allowed-origins: "*"
+        allowed-methods: GET, PUT, POST, DELETE, OPTIONS
+        allowed-headers: "*"
+        exposed-headers:
+        allow-credentials: true
+        max-age: 1800
+
+    # JHipster应用首页左上角的丝带显示
+    ribbon:
+        #逗号分隔显示丝带的配置文件列表
+        display-on-active-profiles: dev
+```
+
+
 
