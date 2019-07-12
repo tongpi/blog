@@ -1408,3 +1408,10 @@ npm install -g generator-jhipster-coverb
 
 yo jhipster-coverb
 ```
+
+## 生成数据库管理模块
+
+```
+npm install -g generator-jhipster-administration-database
+yo hipster-administration-database
+```
