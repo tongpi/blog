@@ -1205,3 +1205,5 @@ public void configure(HttpSecurity http) throws Exception {
 
 
 # [JHipster Domain Language (JDL)](https://blog.csdn.net/qq_31424825/article/details/80991423)
+
+![1562915745116](assets/1562915745116.png)
