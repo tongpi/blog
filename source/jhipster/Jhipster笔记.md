@@ -1207,3 +1207,20 @@ public void configure(HttpSecurity http) throws Exception {
 # [JHipster Domain Language (JDL)](https://blog.csdn.net/qq_31424825/article/details/80991423)
 
 ![1562915745116](assets/1562915745116.png)
+
+
+
+# 安装smartcn分词器
+
+```shell
+elasticsearch-plugin install analysis-smartcn  
+```
+
+# 项目中使用smartcn分词器
+
+- 在要存入ES的Domain实体对象中对需要建立分词的列配置 @Field 如下：
+
+```
+@Field(type = FieldType.Text, searchAnalyzer = "smartcn", analyzer = "smartcn")
+```
+
