@@ -92,6 +92,7 @@ npm install -S redux react-redux @types/react-redux
 ```shell
 Ctrl + Shift + ` 打开集成命令行终端
 ALt + z 自动折行开关
+Alt + 组件上点击 打开组件定义
 Alt + up/down 上下移动当前行
 Shift + Alt up/down上下复制当前行  或上下复制选择的多行
 shift + ctrl + k  删除当前行
