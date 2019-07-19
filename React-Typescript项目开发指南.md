@@ -101,13 +101,16 @@ Ctrl + Shift + V 预览Markdown文件
 alt+shift+A 多行注释
 shift + alt +f 代码格式化
 
+F8 跳转到下一个 Error 或 Warning
 F12 打开定义，ESC取消 
 Alt + 组件上点击打开组件定义
 Alt+Shift+鼠标左键，Ctrl+Alt+Down/Up  多行编辑(列编辑)：
+Alt+鼠标左键拖动 块选择
 Ctrl+Shift+L 同时选中所有匹配，可用来批量重命名
 Ctrl+D 下一个匹配的也被选中，可用来批量重命名
 Ctrl+Shift+K 删除当前行
-Ctrl+U 返回上一次光标位置：
+Ctrl+U 返回上一次光标位置
+
 ```
 
 ## 2、VS CODE 高手常用的插件
