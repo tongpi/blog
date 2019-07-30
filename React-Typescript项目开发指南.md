@@ -90,6 +90,8 @@ npm install -S redux react-redux @types/react-redux
 ## 1、VS CODE 高手使用的快捷键
 
 ```shell
+F2 重命名光标处的变量
+Ctrl + Space 打开智能代码提示
 Ctrl + Shift + ` 打开集成命令行终端
 ALt + z 自动折行开关
 Alt + up/down 上下移动当前行
@@ -106,11 +108,13 @@ F12 打开定义，ESC取消
 Alt + 组件上点击打开组件定义
 Alt+Shift+鼠标左键，Ctrl+Alt+Down/Up  多行编辑(列编辑)：
 Alt+鼠标左键拖动 块选择
+Ctrl + 鼠标左键单击 添加多个光标 多行编辑
+选择字符串，然后按Ctrl+shift+L 批量修改
 Ctrl+Shift+L 同时选中所有匹配，可用来批量重命名
 Ctrl+D 下一个匹配的也被选中，可用来批量重命名
 Ctrl+Shift+K 删除当前行
 Ctrl+U 返回上一次光标位置
-
+Ctrl+shift+[ 或 ]折叠关闭代码块，如函数体、HTML标签等
 ```
 
 ## 2、VS CODE 高手常用的插件
@@ -122,6 +126,8 @@ Vscode-icons
 TabNine
 # 打开Markdown文件时，自动打开Markdown预览窗口
 Auto-Open Markdown Preview
+#实时预览html
+HTML Preview
 ```
 
 ## 3、`react-typescrip`代码辅助编写插件：
@@ -137,6 +143,12 @@ Auto Import - ES6, TS, JSX, TSX
 React Typescript Toolbox
 # 选择部分jsx代码，点击小灯泡，选择合适的重构操作
 VSCode React Refactor 代码重构插件
+# ****
+Type safe React & Redux Snippets in TypeScript
+# 代码重构
+refactorix  #F1 输入x:
+#编写Jest 单元测试
+Jest Snippets
 ```
 
 # 三、React/JSX 编码规范(Airbnb)
@@ -840,3 +852,43 @@ render() {
 > 为什么?
 >
 >  [`isMounted` 反人类设计模式:()](https://facebook.github.io/react/blog/2015/12/16/ismounted-antipattern.html), 在 ES6 classes 中无法使用， 官方将在未来的版本里删除此方法.
+
+# 四、ant-design-pro使用指南
+
+## 1、umi
+
+umi，中文可发音为乌米，是一个可插拔的企业级 react 应用框架。umi 以路由为基础的，支持[类 next.js 的约定式路由](https://umijs.org/zh/guide/router.html)，以及各种进阶的路由功能，并以此进行功能扩展，比如[支持路由级的按需加载](https://umijs.org/zh/plugin/umi-plugin-react.html#dynamicimport)。然后配以完善的[插件体系](https://umijs.org/zh/plugin/)，覆盖从源码到构建产物的每个生命周期，支持各种功能扩展和业务需求，目前内外部加起来已有 50+ 的插件。
+
+umi 是蚂蚁金服的底层前端框架，已直接或间接地服务了 600+ 应用，包括 java、node、H5 无线、离线（Hybrid）应用、纯前端 assets 应用、CMS 应用等。他已经很好地服务了我们的内部用户，同时希望他也能服务好外部用户。
+
+### 安装umi
+
+参考：
+
+https://umijs.org/zh/guide/block.html
+
+https://pro.ant.design/docs/new-page-cn
+
+你可以通过 `yarn create umi` 或 `npm create umi` 使用 create-umi。推荐使用 `yarn create` 命令，能确保每次使用最新的脚手架。
+
+```bash
+mkdir myapp && cd myapp
+npm create umi
+npm install
+npm start
+#访问 http://localhost:8000
+
+#查看和安装区块
+npx umi block list
+#区块使用帮助
+npx umi help block
+#安装全部区块
+npm run fetch:blocks
+
+
+
+```
+
+package.json文件中添加--proxy http://localhost:8087解决无法构建的问题
+
+"postinstall": "node node_modules/protractor/bin/webdriver-manager --proxy http://localhost:8087 update --gecko false",
